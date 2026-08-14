@@ -1,9 +1,6 @@
 import SectionLabel from '../components/SectionLabel'
+import AgeDistributionChart from '../components/AgeDistributionChart'
 
-// Placeholder shell — Recharts fed by GET /api/stats (pandas/numpy-processed), wired
-// in Stage 2 once a real, citable prevalence dataset is sourced and approved (see
-// PLANNING.md "flagged: content that must NOT be invented", item 1). No mock numbers
-// here in the meantime.
 export default function Stats() {
   return (
     <section id="stats" className="scroll-mt-20 border-t border-wine/10 bg-surface px-6 py-24">
@@ -13,9 +10,18 @@ export default function Stats() {
           Prevalence &amp; undiagnosed rates
         </h2>
         <p className="mt-4 max-w-xl text-ink/70">
-          Charts wired to a live <code className="text-wine">/api/stats</code> endpoint — sourced
-          dataset pending your approval, added in Stage 2.
+          The headline prevalence/undiagnosed-rate pull-quote stat (WHO/epidemiological
+          source, per PLANNING.md) is still pending your approval — added here once sourced.
         </p>
+
+        <div className="mt-16 max-w-2xl">
+          <h3 className="font-display text-xl font-semibold text-ink">
+            Age at diagnosis, by bracket
+          </h3>
+          <div className="mt-6">
+            <AgeDistributionChart />
+          </div>
+        </div>
       </div>
     </section>
   )

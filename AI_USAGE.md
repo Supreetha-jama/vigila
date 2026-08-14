@@ -71,5 +71,31 @@ self-hosted Fraunces/Inter fonts, hero blob decoration, and sticky-nav scroll-sp
 show passed/active/upcoming while scrolling) — not just "the build didn't error." Backend:
 `uvicorn` boots and `curl localhost:8000/api/health` returns `{"status":"ok"}`.
 
-_(Continue logging here at each subsequent stage — stats pipeline, chatbot wiring, education
+## Stage 2 (partial) — Stats page: age-distribution chart
+
+First real dataset wired in: `backend/data/pcos_dataset.csv` (user-supplied, 1000 rows). Built
+`GET /api/stats/age-distribution` (pandas `pd.cut` to bucket ages into 5 brackets, count
+`PCOS_Diagnosis==1` per bracket) and a Recharts bar chart on `/stats`.
+
+**Prompting choice worth noting for the writeup:** this stage was explicitly run in "explain, don't
+just generate" mode — before each piece, a one-line rationale (why `pd.cut` here, why `GET` not
+`POST`), then a full line-by-line walkthrough of the pandas logic after writing it, on request. The
+point wasn't the code (that part's fast either way) — it was making sure the pandas technique itself
+transfers, since it'll need to be explained again in the actual submission/demo.
+
+**Color/design decision:** ran the `dataviz` skill's chosen-form step, which flagged this as
+*ordinal* data (age brackets), not nominal categorical — so it took a single-hue lightness ramp
+(one color, five monotone steps) rather than five arbitrary categorical hues. The ramp is wine
+(`#8E4459`) blended over the surface color at 5 opacity steps, so it's still built entirely from
+the locked 6-hex palette rather than introducing new colors — then validated with the skill's
+`validate_palette.js --ordinal` script (lightness monotonicity, step separation, light-end contrast
+against the surface) rather than eyeballed.
+
+**Labeling decision (Wellness-track-adjacent, re: "don't invent"):** this CSV reads as a clean/
+synthetic Kaggle-style practice dataset, not verified clinical records — so its chart carries its
+own distinct, lower-authority caption (small, italic, muted) rather than being styled like the
+cited WHO/epidemiological stat elsewhere on the site. Kept the two visually distinguishable so a
+reader doesn't accidentally weight a synthetic-data illustration the same as a cited real statistic.
+
+_(Continue logging here at each subsequent stage — remaining stats work, chatbot wiring, education
 content, polish/accessibility, deploy.)_
