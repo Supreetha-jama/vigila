@@ -97,5 +97,16 @@ own distinct, lower-authority caption (small, italic, muted) rather than being s
 cited WHO/epidemiological stat elsewhere on the site. Kept the two visually distinguishable so a
 reader doesn't accidentally weight a synthetic-data illustration the same as a cited real statistic.
 
+## Stage 2 (continued) — real WHO citation wired into the hero/stats pull-quotes
+
+User supplied the WHO fact-sheet URL and the two figures to use (10–13% prevalence, 70%
+undiagnosed). Before wiring them in, fetched the live WHO page directly and confirmed both figures
+verbatim on the page, rather than trusting either the user's paraphrase or model recall of the
+number — this project's "do not invent" rule applies as much to *verifying* a supplied figure as to
+not inventing one outright. Built a reusable `PullQuoteStat` component (gold number + label +
+visible source link) per PLANNING.md's hero pattern, used in both the hero (70% figure) and `/stats`
+(both figures) so the two placements stay visually consistent. Marked item 1 of PLANNING.md's
+"content that must NOT be invented" list as resolved with the citation.
+
 _(Continue logging here at each subsequent stage — remaining stats work, chatbot wiring, education
 content, polish/accessibility, deploy.)_

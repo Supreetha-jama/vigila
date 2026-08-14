@@ -83,7 +83,12 @@ Compiled Aug 13, 2026, the day before hackathon kickoff (Technology For Wellness
 
 ## Content that still needs a real, citable source (do not invent)
 
-1. PCOS prevalence & undiagnosed-rate statistics (`/stats` page, hero pull-quote, phenotype-card context)
+1. ~~PCOS prevalence & undiagnosed-rate statistics (`/stats` page, hero pull-quote, phenotype-card context)~~ —
+   **resolved**: WHO fact sheet on polycystic ovary syndrome (verified by fetching the live page, not
+   from training-data recall) — "PCOS affects an estimated 10–13% of reproductive-aged women" and
+   "up to 70% of women with PCOS worldwide do not know they have this condition."
+   https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome — wired into the hero
+   and `/stats` pull-quotes. Phenotype-card context (item still open) may cite the same source.
 2. Symptom & management-tip claims (`/symptoms` page) — each needs a citation
 3. Crisis-resource hotlines/services in the chatbot fallback — verify current at build time
 

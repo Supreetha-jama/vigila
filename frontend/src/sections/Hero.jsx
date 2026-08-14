@@ -1,3 +1,10 @@
+import PullQuoteStat from '../components/PullQuoteStat'
+
+const WHO_SOURCE = {
+  label: 'WHO fact sheet: Polycystic ovary syndrome',
+  href: 'https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome',
+}
+
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden px-6 pb-24 pt-40 md:pb-32 md:pt-48">
@@ -33,6 +40,14 @@ export default function Hero() {
         >
           Start with the basics
         </a>
+
+        <div className="mt-14">
+          <PullQuoteStat
+            value="70%"
+            label="of women with PCOS worldwide don’t know they have it."
+            source={WHO_SOURCE}
+          />
+        </div>
       </div>
     </section>
   )
