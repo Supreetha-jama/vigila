@@ -1,0 +1,37 @@
+# --- secrets — never commit these ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+**/secrets/**
+**/*_credentials*
+**/*credentials*.json
+**/*service-account*.json
+
+# --- frontend ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.vite/
+
+# --- backend (Python) ---
+backend/.venv/
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/*.egg-info/
+backend/.pytest_cache/
+
+# --- editors / OS ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- logs ---
+*.log
+npm-debug.log*
