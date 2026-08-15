@@ -77,7 +77,8 @@ Compiled Aug 13, 2026, the day before hackathon kickoff (Technology For Wellness
 ## Stack
 
 - **Frontend:** React (Vite), JavaScript (not TypeScript), Tailwind CSS
-- **Backend:** FastAPI, pandas/numpy, Claude API for the chatbot
+- **Backend:** FastAPI, pandas/numpy, Gemini API (`google-genai`) for the chatbot — switched from
+  Claude mid-build; see Stage 3 notes in AI_USAGE.md and `backend/prompts/companion_system_prompt.md`
 - **Deployment:** Vercel (frontend) + Render (backend), live for judges
 - **Structure:** monorepo — `vigila/frontend`, `vigila/backend`
 

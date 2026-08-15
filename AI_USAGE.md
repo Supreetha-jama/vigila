@@ -57,7 +57,7 @@ for the submission writeup:
    latest message — a stateless single-message call can't judge a trend.
 4. Crisis resources (988 Suicide & Crisis Lifeline, Crisis Text Line) are flagged in the prompt
    itself to be re-verified as current before the live demo, per the project's "don't invent
-   real-world facts" rule.
+   real-world facts" rule. (Verified in Stage 3 — see below.)
 
 Scaffold work done in this stage:
 - `frontend/`: Vite + React 19 + Tailwind (JS, not TS), `tailwind.config.js` wired with the Wine &
@@ -108,5 +108,44 @@ visible source link) per PLANNING.md's hero pattern, used in both the hero (70% 
 (both figures) so the two placements stay visually consistent. Marked item 1 of PLANNING.md's
 "content that must NOT be invented" list as resolved with the citation.
 
-_(Continue logging here at each subsequent stage — remaining stats work, chatbot wiring, education
+## Stage 3 — Companion chatbot wired to a live model
+
+Verified the two crisis-resource phone/text lines by fetching 988lifeline.org and
+crisistextline.org directly, rather than trusting training-data recall — both confirmed current.
+Consistent theme across this whole project: "don't invent" applies to *verifying* real-world facts
+(a phone number, a stat, a dataset source), not just refusing to make numbers up outright.
+
+Backend built against the Claude API (Anthropic SDK), capping conversation history sent per request
+to the last 12 messages so the system prompt's "watch the trend, not just the last message"
+instruction actually had material to reason over — a single stateless message can't judge a trend.
+
+**Mid-build provider switch, Claude → Gemini** (user-directed, partway through Stage 3): the
+Anthropic account hit a billing/credit wall; the user supplied a Gemini key instead and asked to
+swap providers. Notable for the writeup because of *how* the swap was verified, not just that it
+happened — same "verify, don't guess" discipline applied to a completely different SDK:
+1. First WebFetch of Google's live Gemini docs returned a plausible-looking "Interactions API"
+   (`client.interactions.create`, `previous_interaction_id`, etc.) with a specific, detailed code
+   example.
+2. Wrote `chat.py` against that shape — it failed immediately: `AttributeError: 'Client' object has
+   no attribute 'interactions'`. The installed SDK (`google-genai==1.47.0`) has no such API — the
+   fetched documentation was wrong (whether hallucinated by the fetch tool's summarizing model, or
+   describing a not-yet-shipped API, wasn't worth chasing down).
+3. Rather than trust a second fetch, switched to directly introspecting the *installed* package —
+   `dir(client)`, `inspect.signature(...)`, reading `errors.APIError`'s actual source — to get the
+   real API surface (`client.models.generate_content`, `types.GenerateContentConfig`,
+   `google.genai.errors.APIError` with `.code`/`.message`). Also queried `client.models.list()`
+   against the live API with the real key to get actual current model IDs, rather than reuse the
+   (also fetch-sourced, also unverified) model name from the same bad doc fetch — landed on
+   `gemini-flash-latest`, an alias Google maintains to always point at their current flash model.
+4. Re-verified all three test scenarios (normal question, explicit crisis language, multi-turn
+   negative-trend escalation) against the new Gemini backend — same pass/fail bar as the original
+   Claude version, all three passed. The system prompt text itself needed zero changes; it was
+   already provider-agnostic (no Claude-specific behavior baked into the wording).
+
+The general lesson, worth stating plainly in the submission: when a tool result (fetched docs, in
+this case) and ground truth (the actual installed library) disagree, trust the ground truth and
+verify by execution — a failed `AttributeError` was a faster and more reliable signal than a second
+round of fetching more documentation would have been.
+
+_(Continue logging here at each subsequent stage — frontend chat UI, remaining stats work, education
 content, polish/accessibility, deploy.)_
