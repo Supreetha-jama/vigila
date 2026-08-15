@@ -1,6 +1,7 @@
 import SectionLabel from '../components/SectionLabel'
 import PullQuoteStat from '../components/PullQuoteStat'
 import AgeDistributionChart from '../components/AgeDistributionChart'
+import Sources from '../components/Sources'
 
 const WHO_SOURCE = {
   label: 'WHO fact sheet: Polycystic ovary syndrome',
@@ -37,6 +38,8 @@ export default function Stats() {
             <AgeDistributionChart />
           </div>
         </div>
+
+        <Sources />
       </div>
     </section>
   )

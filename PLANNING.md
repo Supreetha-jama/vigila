@@ -89,9 +89,17 @@ Compiled Aug 13, 2026, the day before hackathon kickoff (Technology For Wellness
    from training-data recall) — "PCOS affects an estimated 10–13% of reproductive-aged women" and
    "up to 70% of women with PCOS worldwide do not know they have this condition."
    https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome — wired into the hero
-   and `/stats` pull-quotes. Phenotype-card context (item still open) may cite the same source.
-2. Symptom & management-tip claims (`/symptoms` page) — each needs a citation
-3. Crisis-resource hotlines/services in the chatbot fallback — verify current at build time
+   and `/stats` pull-quotes, and now also in the shared Sources footer (`/learn`, `/stats`).
+   Phenotype-card content itself (item 2 below) is cited separately.
+2. ~~Phenotype-card content (`/learn`)~~ — **resolved**: cited to the 2023 International
+   Evidence-based Guideline for the Assessment and Management of PCOS (International PCOS Network,
+   39 endorsing societies) — verified via PubMed E-utilities (PMID 37580861) before wiring in.
+   https://pubmed.ncbi.nlm.nih.gov/37580861/ — shown in the shared Sources footer alongside the WHO
+   citation.
+3. Symptom & management-tip claims (`/symptoms` page) — each still needs a citation
+4. ~~Crisis-resource hotlines/services in the chatbot fallback~~ — **resolved**: 988 Suicide &
+   Crisis Lifeline and Crisis Text Line (text HOME to 741741) verified against the live
+   988lifeline.org and crisistextline.org pages during Stage 3 — see AI_USAGE.md.
 
 ## Stage 1 notes
 

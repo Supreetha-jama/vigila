@@ -147,5 +147,17 @@ this case) and ground truth (the actual installed library) disagree, trust the g
 verify by execution — a failed `AttributeError` was a faster and more reliable signal than a second
 round of fetching more documentation would have been.
 
+Frontend `CompanionChat.jsx` verified live in-browser, not just via curl.
+
+## Stage 4 — Learn section: phenotype cards + shared citations
+
+User supplied exact card copy + citation (2023 International PCOS Guideline, PMID 37580861).
+Verified the citation via PubMed's E-utilities API (the raw PubMed page just returns a cookie wall
+to a plain fetch) before wiring it in. Split each card's two user-supplied sentences into
+teaser/detail at the existing sentence boundary — no paraphrasing, nothing invented for the UI
+pattern's sake. Built one shared `Sources` component (used on `/learn` and `/stats`) with citations
+as inline-linked sentences per the user's "clean text, not raw academic format" ask. The four tint
+options PLANNING.md specified for cards (wine/rose/gold/ink) mapped 1:1 onto the four cards.
+
 _(Continue logging here at each subsequent stage — frontend chat UI, remaining stats work, education
 content, polish/accessibility, deploy.)_
