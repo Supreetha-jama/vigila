@@ -18,8 +18,16 @@ function Bubble({ role, content }) {
   )
 }
 
+// Deterministic — states scope plainly rather than relying on the model to
+// frame itself the same way on every first turn.
+const OPENING_MESSAGE = {
+  role: 'assistant',
+  content:
+    "Hi — I'm Vigila's companion. This is a space to listen and talk through what you're feeling. I'm not a therapist and I can't diagnose anything — just here to listen, and I'll point you toward real support if things ever feel like more than a chat can hold.",
+}
+
 export default function CompanionChat() {
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([OPENING_MESSAGE])
   const [input, setInput] = useState('')
   const [status, setStatus] = useState('idle') // idle | sending | error
   const [errorText, setErrorText] = useState('')
@@ -62,11 +70,6 @@ export default function CompanionChat() {
   return (
     <div className="flex h-[520px] flex-col overflow-hidden rounded-2xl border border-wine/10 bg-background">
       <div className="flex-1 space-y-3 overflow-y-auto p-4">
-        {messages.length === 0 && (
-          <p className="text-sm text-ink/50">
-            Say as much or as little as you want — there&rsquo;s no wrong way to start.
-          </p>
-        )}
         {messages.map((m, i) => (
           <Bubble key={i} role={m.role} content={m.content} />
         ))}

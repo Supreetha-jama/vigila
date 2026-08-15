@@ -96,7 +96,9 @@ Compiled Aug 13, 2026, the day before hackathon kickoff (Technology For Wellness
    39 endorsing societies) — verified via PubMed E-utilities (PMID 37580861) before wiring in.
    https://pubmed.ncbi.nlm.nih.gov/37580861/ — shown in the shared Sources footer alongside the WHO
    citation.
-3. Symptom & management-tip claims (`/symptoms` page) — each still needs a citation
+3. ~~Symptom & management-tip claims (`/symptoms` page)~~ — **resolved**: 6 sources verified
+   (PubMed, Harvard Health, Contemporary OB/GYN, a clinicaltrials.gov consent form, a Springer
+   meta-analysis) — see AI_USAGE.md Stage 4 for verification method per source.
 4. ~~Crisis-resource hotlines/services in the chatbot fallback~~ — **resolved**: 988 Suicide &
    Crisis Lifeline and Crisis Text Line (text HOME to 741741) verified against the live
    988lifeline.org and crisistextline.org pages during Stage 3 — see AI_USAGE.md.

@@ -159,5 +159,20 @@ pattern's sake. Built one shared `Sources` component (used on `/learn` and `/sta
 as inline-linked sentences per the user's "clean text, not raw academic format" ask. The four tint
 options PLANNING.md specified for cards (wine/rose/gold/ink) mapped 1:1 onto the four cards.
 
-_(Continue logging here at each subsequent stage — frontend chat UI, remaining stats work, education
-content, polish/accessibility, deploy.)_
+## Stage 4 (continued) — Symptoms page: 6 cards + disclaimers + logo animation
+
+Verified all 6 medical sources before wiring in (PubMed E-utilities, a clinicaltrials.gov PDF via
+`pypdf`, a paywalled article resolved via PubMed search); one stat flagged as cross-verified rather
+than directly confirmed. Disclaimers implemented per spec (site-wide note, per-card note only on
+prescription cards, crisis-resource line only on the mental-health card, deterministic chatbot
+opening line). Reused Learn's existing card hover/click pattern for consistency.
+
+**Logo animation** iterated through several failed approaches (fade-in-place, `sticky` full-cover —
+broke layout, then a `top:50%` vs `top:50vh` containing-block bug) before landing on the simplest
+option: a large, slowly-rotating copy of the real logo behind the opaque cards, decorative like the
+hero's gradient blobs rather than interactive. Also fixed a real bug found along the way:
+`prefers-reduced-motion` was hiding the mark instead of showing it statically, contradicting
+PLANNING.md's own rule. Diagnosed each failure from actual computed DOM state, not screenshots.
+
+_(Continue logging here at each subsequent stage — remaining stats work, polish/accessibility,
+deploy.)_

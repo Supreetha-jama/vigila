@@ -1,5 +1,6 @@
 import SectionLabel from '../components/SectionLabel'
 import CompanionChat from '../components/CompanionChat'
+import DisclaimerNote from '../components/DisclaimerNote'
 
 export default function Companion() {
   return (
@@ -17,6 +18,10 @@ export default function Companion() {
 
         <div className="mt-8">
           <CompanionChat />
+        </div>
+
+        <div className="mt-4">
+          <DisclaimerNote />
         </div>
       </div>
     </section>
