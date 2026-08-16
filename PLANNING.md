@@ -102,6 +102,12 @@ Compiled Aug 13, 2026, the day before hackathon kickoff (Technology For Wellness
 4. ~~Crisis-resource hotlines/services in the chatbot fallback~~ — **resolved**: 988 Suicide &
    Crisis Lifeline and Crisis Text Line (text HOME to 741741) verified against the live
    988lifeline.org and crisistextline.org pages during Stage 3 — see AI_USAGE.md.
+5. ~~Age-distribution dataset (`/stats` page bar chart)~~ — **resolved**: an open, synthetic/practice
+   PCOS dataset, not verified clinical records, captioned as such (deliberately lower authority than
+   the WHO/guideline citations above). Kaggle: PCOS Diagnosis Dataset —
+   https://www.kaggle.com/datasets/samikshadalvi/pcos-diagnosis-dataset (verified the URL resolves
+   before wiring it in). Was left as a "[CITATION NEEDED]" placeholder in the component through
+   Stage 5; caught and fixed during the accessibility/polish pass.
 
 ## Stage 1 notes
 

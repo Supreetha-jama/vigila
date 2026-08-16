@@ -1,25 +1,10 @@
-import PullQuoteStat from '../components/PullQuoteStat'
-
-const WHO_SOURCE = {
-  label: 'WHO fact sheet: Polycystic ovary syndrome',
-  href: 'https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome',
-}
-
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-6 pb-24 pt-40 md:pb-32 md:pt-48">
-      {/* Asymmetric, low-opacity gradient blobs — the one intentional exception to
-          "no gradient blobs" per PLANNING.md, positioned off-center in a corner. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 right-[-10%] h-[420px] w-[420px] rounded-full bg-rose/40 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[5%] top-32 h-[320px] w-[320px] rounded-full bg-gold/30 blur-3xl"
-      />
-
-      <div className="relative mx-auto max-w-6xl">
+    <section
+      id="top"
+      className="relative overflow-hidden bg-gradient-to-br from-rose/25 via-background to-gold/20 px-6 pb-24 pt-40 md:pb-32 md:pt-48"
+    >
+      <div className="relative z-10 mx-auto max-w-6xl">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-wine">
           VIGILA
         </p>
@@ -27,8 +12,8 @@ export default function Hero() {
           You&rsquo;re not imagining this.
         </h1>
         <p className="mt-6 max-w-md text-lg text-ink/70">
-          Real information and support for PCOS, built for people who&rsquo;ve been told
-          &ldquo;you&rsquo;re fine&rdquo; one too many times.
+          Real information about PCOS, in one place. Whether you&rsquo;re diagnosed, wondering, or
+          tired of being dismissed, this will help you trust what you already know.
         </p>
         <a
           href="#learn"
@@ -40,14 +25,6 @@ export default function Hero() {
         >
           Start with the basics
         </a>
-
-        <div className="mt-14">
-          <PullQuoteStat
-            value="70%"
-            label="of women with PCOS worldwide don’t know they have it."
-            source={WHO_SOURCE}
-          />
-        </div>
       </div>
     </section>
   )

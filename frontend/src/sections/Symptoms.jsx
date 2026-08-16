@@ -10,7 +10,7 @@ const CARDS = [
     solutionName: 'Inositol',
     why: 'Often tied to insulin resistance disrupting the hormone signals that trigger ovulation each month.',
     solution:
-      'Myo-inositol is one of the most-studied supplements for PCOS — one clinical study found it restored regular cycles in 68% of patients over 6 months, alongside improved insulin sensitivity. Generally well-tolerated; mild GI upset is the most common side effect.',
+      'Myo-inositol is one of the most-studied supplements for PCOS. One clinical study found it restored regular cycles in 68% of patients over 6 months, alongside improved insulin sensitivity. Generally well-tolerated; mild GI upset is the most common side effect.',
     source: {
       label: 'Contemporary OB/GYN, summarizing peer-reviewed clinical research',
       href: 'https://www.contemporaryobgyn.net/view/myo-inositol-shows-promise-for-pcos-therapy',
@@ -33,7 +33,7 @@ const CARDS = [
     solutionName: 'Minoxidil',
     why: 'Driven by the same androgen-related process as other pattern hair loss.',
     solution:
-      'FDA-approved for female pattern hair loss. Takes patience — results typically appear after 3–6 months, and an initial shedding phase in the first few weeks is normal, not a sign it’s failing.',
+      'FDA-approved for female pattern hair loss. Takes patience. Results typically appear after 3–6 months, and an initial shedding phase in the first few weeks is normal, not a sign it’s failing.',
     source: {
       label: 'Harvard Health',
       href: 'https://www.health.harvard.edu/healthy-aging-and-longevity/treating-female-pattern-hair-loss',
@@ -42,9 +42,9 @@ const CARDS = [
   {
     symptom: 'Insulin resistance / difficulty losing weight',
     solutionName: 'Metformin',
-    why: 'High insulin drives the ovaries to produce more androgens, creating a feedback loop — not a willpower issue.',
+    why: 'High insulin drives the ovaries to produce more androgens, creating a feedback loop, not a willpower issue.',
     solution:
-      'Commonly prescribed to improve insulin sensitivity. Common side effects: nausea, GI upset, metallic taste — usually improving over the first few weeks. Note: effects tend to fade if stopped without accompanying lifestyle changes, so it’s often paired with other approaches, not used as a standalone fix.',
+      'Commonly prescribed to improve insulin sensitivity. Common side effects: nausea, GI upset, metallic taste, usually improving over the first few weeks. Note: effects tend to fade if stopped without accompanying lifestyle changes, so it’s often paired with other approaches, not used as a standalone fix.',
     source: {
       label: 'NCBI clinical trial protocol summary',
       href: 'https://cdn.clinicaltrials.gov/large-docs/94/NCT06015594/Prot_SAP_ICF_000.pdf',
@@ -52,9 +52,9 @@ const CARDS = [
     prescriptionNote: true,
   },
   {
-    symptom: 'Mood changes — anxiety, depression, irritability',
+    symptom: 'Mood changes: anxiety, depression, irritability',
     solutionName: 'Talk to your doctor about screening',
-    why: 'This is well-documented, not incidental — women with PCOS show significantly higher rates of depression and anxiety than the general population, with pooled prevalence estimates around 34–51% depending on the study. This is likely tied to hormonal and insulin-related factors, not a personal failing.',
+    why: 'This is well-documented, not incidental. Women with PCOS show significantly higher rates of depression and anxiety than the general population, with pooled prevalence estimates around 34–51% depending on the study. This is likely tied to hormonal and insulin-related factors, not a personal failing.',
     solution:
       'Because this is common enough that your doctor may screen for it directly, bring it up even if it feels unrelated to "PCOS." Treating underlying hormonal drivers sometimes helps mood too, but that’s not a substitute for separate mental health support if needed.',
     source: {
@@ -88,7 +88,7 @@ export default function Symptoms() {
         </h2>
 
         <p className="mt-4 text-ink/70">
-          These are some of the most common symptoms and approaches — PCOS can show up differently
+          These are some of the most common symptoms and approaches. PCOS can show up differently
           for everyone, and this isn&rsquo;t the full list. If something doesn&rsquo;t feel right,
           even if it&rsquo;s not listed here, it&rsquo;s worth bringing up with your doctor.
         </p>

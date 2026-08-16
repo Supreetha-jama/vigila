@@ -10,7 +10,7 @@ const WHO_SOURCE = {
 
 export default function Stats() {
   return (
-    <section id="stats" className="scroll-mt-20 border-t border-wine/10 bg-surface px-6 py-24">
+    <section id="stats" className="scroll-mt-20 border-t border-wine/10 bg-rose/15 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionLabel>Stats</SectionLabel>
         <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold text-ink md:text-4xl">
