@@ -30,6 +30,7 @@ backend/.pytest_cache/
 .DS_Store
 .idea/
 .vscode/
+.claude/
 *.swp
 
 # --- logs ---

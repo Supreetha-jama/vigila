@@ -174,5 +174,11 @@ hero's gradient blobs rather than interactive. Also fixed a real bug found along
 `prefers-reduced-motion` was hiding the mark instead of showing it statically, contradicting
 PLANNING.md's own rule. Diagnosed each failure from actual computed DOM state, not screenshots.
 
-_(Continue logging here at each subsequent stage — remaining stats work, polish/accessibility,
-deploy.)_
+## Stage 5 — Polish & accessibility
+
+Scripted WCAG contrast audit (not eyeballed) across every text/background pair; gold text never
+clears AA, kept anyway as a documented tradeoff. Added site-wide keyboard focus states, fixed an
+a11y gap in the chart and a real nav overflow bug at phone width (both verified via in-browser DOM
+checks, not screenshots), and caught a leftover `[CITATION NEEDED]` placeholder in the chart caption.
+
+_(Continue logging here at each subsequent stage — deploy.)_
