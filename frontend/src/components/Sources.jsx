@@ -3,8 +3,8 @@
 export default function Sources() {
   return (
     <div className="mt-16 border-t border-wine/10 pt-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink/40">Sources</p>
-      <ul className="mt-3 space-y-2 text-xs text-ink/50">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">Sources</p>
+      <ul className="mt-3 space-y-2 text-xs text-ink/70">
         <li>
           Based on the{' '}
           <a

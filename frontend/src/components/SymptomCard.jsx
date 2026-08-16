@@ -54,8 +54,8 @@ export default function SymptomCard({
 
       {mentalHealthNote && (
         <p className="mt-4 rounded-lg bg-wine/10 px-3 py-2 text-xs text-ink/70">
-          If this ever feels like more than everyday stress — including any thoughts of harming
-          yourself — support is available any time: 988 Suicide &amp; Crisis Lifeline (call or text
+          If this ever feels like more than everyday stress, including any thoughts of harming
+          yourself, support is available any time: 988 Suicide &amp; Crisis Lifeline (call or text
           988) or the Crisis Text Line (text HOME to 741741).
         </p>
       )}
@@ -64,7 +64,7 @@ export default function SymptomCard({
         href={source.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 inline-block text-xs text-ink/40 underline decoration-ink/20 underline-offset-2 hover:text-wine"
+        className="mt-4 inline-block text-xs text-ink/70 underline decoration-ink/20 underline-offset-2 hover:text-wine"
       >
         {source.label}
       </a>

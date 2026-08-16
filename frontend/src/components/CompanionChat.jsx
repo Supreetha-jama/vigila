@@ -23,7 +23,7 @@ function Bubble({ role, content }) {
 const OPENING_MESSAGE = {
   role: 'assistant',
   content:
-    "Hi — I'm Vigila's companion. This is a space to listen and talk through what you're feeling. I'm not a therapist and I can't diagnose anything — just here to listen, and I'll point you toward real support if things ever feel like more than a chat can hold.",
+    "Hi, I'm Vigila's companion. This is a space to listen and talk through what you're feeling. I'm not a therapist and I can't diagnose anything. Just here to listen, and I'll point you toward real support if things ever feel like more than a chat can hold.",
 }
 
 export default function CompanionChat() {
@@ -75,13 +75,13 @@ export default function CompanionChat() {
         ))}
         {status === 'sending' && (
           <div className="flex justify-start">
-            <div className="rounded-2xl rounded-bl-sm border border-wine/10 bg-surface px-4 py-2.5 text-sm text-ink/50">
+            <div className="rounded-2xl rounded-bl-sm border border-wine/10 bg-surface px-4 py-2.5 text-sm text-ink/70">
               typing&hellip;
             </div>
           </div>
         )}
         {status === 'error' && (
-          <p className="text-sm text-wine/80" role="alert">
+          <p className="text-sm text-wine" role="alert">
             {errorText}
           </p>
         )}
@@ -99,7 +99,7 @@ export default function CompanionChat() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type here…"
           disabled={status === 'sending'}
-          className="flex-1 rounded-full border border-wine/15 bg-background px-4 py-2 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-wine/30"
+          className="flex-1 rounded-full border border-wine/15 bg-background px-4 py-2 text-sm text-ink placeholder:text-ink/70 focus:outline-none focus:ring-2 focus:ring-wine/30"
         />
         <button
           type="submit"

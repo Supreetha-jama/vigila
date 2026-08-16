@@ -18,7 +18,7 @@ export default {
       },
       fontFamily: {
         display: ['"Fraunces Variable"', 'serif'],
-        sans: ['"Inter Variable"', 'sans-serif'],
+        sans: ['"Work Sans Variable"', 'sans-serif'],
       },
     },
   },

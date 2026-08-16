@@ -53,11 +53,11 @@ export default function AgeDistributionChart() {
   }, [])
 
   if (state.status === 'loading') {
-    return <p className="text-sm text-ink/50">Loading chart…</p>
+    return <p className="text-sm text-ink/70">Loading chart…</p>
   }
   if (state.status === 'error') {
     return (
-      <p className="text-sm text-ink/50">
+      <p className="text-sm text-ink/70">
         Couldn&rsquo;t load the age-distribution chart right now.
       </p>
     )
@@ -65,40 +65,53 @@ export default function AgeDistributionChart() {
 
   return (
     <div>
-      <ResponsiveContainer width="100%" height={320}>
-        <BarChart data={state.data} barCategoryGap="24%">
-          <CartesianGrid vertical={false} stroke="rgba(59,36,48,0.08)" />
-          <XAxis
-            dataKey="bracket"
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: '#3B2430', opacity: 0.6, fontSize: 13 }}
-          />
-          <YAxis
-            allowDecimals={false}
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: '#3B2430', opacity: 0.6, fontSize: 13 }}
-            width={32}
-          />
-          <Tooltip content={<ChartTooltip />} cursor={{ fill: 'rgba(142,68,89,0.06)' }} />
-          <Bar dataKey="count" barSize={24} radius={[4, 4, 0, 0]}>
-            {state.data.map((entry, index) => (
-              <Cell key={entry.bracket} fill={AGE_RAMP[index % AGE_RAMP.length]} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+      <div
+        role="img"
+        aria-label="Bar chart of PCOS diagnosis counts by age bracket, ordered youngest to oldest"
+      >
+        <ResponsiveContainer width="100%" height={320}>
+          <BarChart data={state.data} barCategoryGap="24%">
+            <CartesianGrid vertical={false} stroke="rgba(59,36,48,0.08)" />
+            <XAxis
+              dataKey="bracket"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: '#3B2430', opacity: 0.6, fontSize: 13 }}
+            />
+            <YAxis
+              allowDecimals={false}
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: '#3B2430', opacity: 0.6, fontSize: 13 }}
+              width={32}
+            />
+            <Tooltip content={<ChartTooltip />} cursor={{ fill: 'rgba(142,68,89,0.06)' }} />
+            <Bar dataKey="count" barSize={24} radius={[4, 4, 0, 0]}>
+              {state.data.map((entry, index) => (
+                <Cell key={entry.bracket} fill={AGE_RAMP[index % AGE_RAMP.length]} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
 
       {/* Distinct, lower-authority caption — deliberately separate in tone from the
           cited WHO/epidemiological stats used elsewhere on the site (see
           PLANNING.md's "content that must NOT be invented" list, item 1). This
           dataset is an open/synthetic practice dataset, not verified clinical
           records, and its percentages shouldn't read with the same weight. */}
-      <p className="mt-3 text-xs italic text-ink/40">
+      <p className="mt-3 text-xs italic text-ink/70">
         Based on an open PCOS dataset (synthetic/practice data, not verified patient
-        records) — [CITATION NEEDED: source link]. Shown for illustration, not as an
-        epidemiological claim.
+        records):{' '}
+        <a
+          href="https://www.kaggle.com/datasets/samikshadalvi/pcos-diagnosis-dataset"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="not-italic underline decoration-ink/20 underline-offset-2 hover:text-wine"
+        >
+          Kaggle: PCOS Diagnosis Dataset
+        </a>
+        . Shown for illustration, not as an epidemiological claim.
       </p>
     </div>
   )

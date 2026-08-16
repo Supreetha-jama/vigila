@@ -2,7 +2,7 @@
    Each family ships multiple @font-face rules split by unicode-range; browsers only
    fetch the subset actually used (effectively latin-only for this site's copy). */
 @import '@fontsource-variable/fraunces/wght.css';
-@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/work-sans/wght.css';
 
 @tailwind base;
 @tailwind components;
@@ -19,6 +19,18 @@
 
   h1, h2, h3 {
     @apply font-display;
+  }
+
+  /* One consistent, on-brand focus indicator for every interactive element,
+     site-wide — :focus-visible so it shows for keyboard/switch navigation but not
+     on every mouse click. Wine reads clearly against both background and surface. */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid theme('colors.wine');
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 

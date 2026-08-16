@@ -1,10 +1,11 @@
 import { useScrollSpy } from '../hooks/useScrollSpy'
 import { useScrollProgress } from '../hooks/useScrollProgress'
+import wordmark from '../assets/vigila-wordmark.png'
 
 const SECTIONS = [
   { id: 'learn', label: 'Learn' },
   { id: 'symptoms', label: 'Symptoms' },
-  { id: 'stats', label: 'Stats' },
+  { id: 'stats', label: 'Statistics' },
   { id: 'companion', label: 'Companion' },
 ]
 
@@ -19,13 +20,12 @@ function scrollToId(id) {
 export default function Nav() {
   const sectionIds = SECTIONS.map((s) => s.id)
   const activeId = useScrollSpy(sectionIds, HEADER_HEIGHT)
-  const activeIndex = sectionIds.indexOf(activeId)
   const progress = useScrollProgress()
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-wine/10 bg-surface/90 backdrop-blur">
       <nav
-        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
+        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
         aria-label="Section navigation"
       >
         <a
@@ -34,15 +34,18 @@ export default function Nav() {
             e.preventDefault()
             scrollToId('top')
           }}
-          className="font-display text-lg font-semibold tracking-wide text-wine"
+          className="flex shrink-0 items-center"
         >
-          VIGILA
+          <img src={wordmark} alt="Vigila" className="h-8 w-auto sm:h-11" />
         </a>
 
-        <ul className="flex items-center gap-6">
-          {SECTIONS.map(({ id, label }, index) => {
+        {/* Same serif logotype voice as the wordmark — italic Fraunces — rather than
+            a small-caps UI label. Color alone (gold on hover/active) carries state
+            now that the dots are gone. Tighter gap/size below sm — four full labels
+            plus the wordmark overflow a real phone width otherwise. */}
+        <ul className="flex items-center gap-3 sm:gap-7">
+          {SECTIONS.map(({ id, label }) => {
             const isActive = id === activeId
-            const isPassed = activeIndex >= 0 && index < activeIndex
             return (
               <li key={id}>
                 <a
@@ -52,16 +55,10 @@ export default function Nav() {
                     scrollToId(id)
                   }}
                   aria-current={isActive ? 'true' : undefined}
-                  className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-                    isActive ? 'text-wine' : 'text-ink/50 hover:text-ink/80'
+                  className={`font-display text-sm italic transition-colors sm:text-lg ${
+                    isActive ? 'text-gold' : 'text-ink/70 hover:text-gold'
                   }`}
                 >
-                  <span
-                    aria-hidden="true"
-                    className={`h-1.5 w-1.5 rounded-full transition-colors ${
-                      isActive || isPassed ? 'bg-wine' : 'border border-ink/30'
-                    }`}
-                  />
                   {label}
                 </a>
               </li>
