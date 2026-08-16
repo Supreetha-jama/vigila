@@ -1,7 +1,6 @@
 # AI usage log (Vigila)
 
-Notes for the **Best Use of AI** bonus track — source material for the submission writeup, not
-the writeup itself.
+Notes for the **Best Use of AI** bonus track.
 
 **Companion chatbot system prompt** (`backend/system_prompt.py`): built specifically to satisfy
 the Wellness track's rule that mood/companion bots must not reinforce negative spirals. Key design
